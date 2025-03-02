@@ -1,0 +1,157 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Gradient Background */
+body {
+    background: linear-gradient(135deg, black, red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contact Form Container */
+.contact-container {
+    background: rgba(255, 255, 255, 0.1); /* Slightly Transparent White */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    backdrop-filter: blur(8px); /* Adds a frosted glass effect */
+}
+
+/* Headings */
+.contact-container h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Focus Effect */
+input:focus, textarea:focus {
+    border-color: white;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, red, white);
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.submit-btn:hover {
+    background: white;
+    color: red;
+    border: 1px solid red;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+/* footer */
+
+/* Ensure full page layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push the footer to the bottom */
+.main-content {
+    
+    margin-top: 200px;
+}
+
+/* Footer Styling */
+/* Make the entire page fill the screen */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main container to push footer down */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full viewport height */
+}
+
+/* Content takes available space */
+
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(to right, black, red);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Footer Image */
+.footer-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 5px 0;
+    }
+
+    .footer-image {
+        width: 90%;
+    }
+}
+

@@ -1,0 +1,115 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Improved Black Gradient Background */
+body {
+    background: linear-gradient(135deg, black, #1a1a1a, red, blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+
+/* Speaker Form Container */
+.speaker-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    margin-top: 80px;
+}
+
+/* Headings */
+.speaker-container h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.speaker-container p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Fields */
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(32, 32, 32);
+}
+
+/* Dropdown Styling */
+select {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Focus Effect */
+input:focus, textarea:focus, select:focus {
+    border-color: white;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, red, white);
+    color: black;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.submit-btn:hover {
+    background: white;
+    color: red;
+    border: 1px solid red;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .speaker-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

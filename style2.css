@@ -1,0 +1,333 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Base font size for rem units */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #101010;
+    font-family: 'Roboto', sans-serif;
+}
+/* Fullscreen Intro Video */
+/* Fullscreen Intro Video */
+#intro-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Make video cover the full screen */
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide the main content until the video ends */
+.hidden {
+    display: none;
+}
+
+/* Fade-out animation */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+/* Particle Background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Pushes it behind other elements */
+    
+}
+
+/* Responsive Container */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 75rem;
+    padding: 1.25rem;
+}
+
+.container img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto;
+    object-fit: contain;
+    position: sticky;
+}
+
+/* Adjust Image with rem for Mobile Responsiveness */
+@media (max-width: 64rem) { /* 1024px */
+    .container img {
+        max-width: 25rem;
+    }
+}
+
+@media (max-width: 50rem) { /* 800px */
+    .container img {
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 30rem) { /* 480px */
+    .container img {
+        max-width: 10rem;
+    }
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    width: 20.375rem;
+    height: auto;
+}
+
+/* Navbar List Items */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    position: relative;
+}
+
+/* Style Dropdown Parent */
+nav ul .dropdown {
+    position: relative;
+}
+
+/* Hide Dropdown Menu Initially */
+nav ul .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    padding: 10px 0;
+    width: 150px;
+    display: none;
+    text-align: left;
+    border-radius: 5px;
+}
+
+/* Style Dropdown Links */
+nav ul .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Hover Effect - White Underline */
+nav ul .dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul .dropdown-menu li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Show Dropdown on Hover */
+nav ul .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Responsive Menu Dropdown */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul .dropdown-menu {
+        position: static;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+nav ul  li{
+    padding-top: 10px;
+}
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+    
+}
+/* Navbar Ticket Button (3D Red to White Gradient) */
+nav .btn {
+    background: linear-gradient(135deg, #ff0000, #ffffff); /* Red to White gradient */
+    border: none;
+    color: black;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 3D Shadow Effect */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+/* Hover Effect (Turns White) */
+nav .btn:hover {
+    background: white;
+    color: red;
+    transform: scale(1.05) translateY(-3px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Click Effect (Press Down) */
+nav .btn:active {
+    transform: scale(1) translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Underline hover effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.125rem;
+    width: 100%;
+    height: 0.125rem;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: rgb(255, 147, 147);
+}
+
+/* Mobile Responsive Menu */
+.icon {
+    display: none;
+    font-size: 1.5625rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 48rem) { /* 768px */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.75rem;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 0.625rem 0;
+    }
+    
+    .icon {
+        display: block;
+    }
+    
+    .showData {
+        display: flex;
+    }
+}
+
+/* BOOK Button */
+/* Center the Book Button */
+/* Center and move "Book Ticket" button to the bottom */
+.book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50px; /* Adjust this value if needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* Style the Book Ticket button */
+.book-btn {
+    background: linear-gradient(135deg, #810000, #feb47b);
+    border: none;
+    color: white;
+    padding: 20px 80px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.book-btn:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
