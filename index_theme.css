@@ -1,0 +1,161 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Theme Styles */
+.cyber-theme {
+    position: relative;
+    padding: clamp(6rem, 15vw, 15rem) 0;
+    background: 
+        radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%),
+        linear-gradient(45deg, #000 25%, transparent 25%) 0 0,
+        linear-gradient(-45deg, #000 25%, transparent 25%) 0 0;
+    background-size: cover, 50px 50px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Wave Divider */
+.wave-divider-top {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    filter: drop-shadow(0 -10px 15px rgba(230,43,30,0.5));
+    z-index: 3;
+}
+
+.wave-divider-top svg {
+    width: calc(100% + 1.3px);
+    height: clamp(120url(../event_page/project/index_theme_event.css)px, 25vw, 120px);
+    display: block;
+}
+
+.wave-divider-top .shape-fill {
+    fill: #e62b1e;
+}
+
+/* Glow Effect */
+.cyber-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150vw;
+    height: 150vh;
+    background: radial-gradient(circle, rgba(230,43,30,0.1) 0%, transparent 60%);
+    transform: translate(-50%, -50%);
+    animation: pulse 8s infinite;
+}
+
+/* Text Styles */
+.cyber-text {
+    position: relative;
+    max-width: min(90%, 800px);
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.cyber-line {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: clamp(1rem, 3vw, 2rem) 0;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #e62b1e 30%, #ff6b6b 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(230,43,30,0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: textReveal 1s forwards;
+}
+
+/* Animations */
+@keyframes textReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Particle Canvas */
+.cyber-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .cyber-theme {
+        padding: 8rem 0;
+    }
+    
+    .cyber-line {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyber-theme {
+        padding: 6rem 0;
+    }
+    
+    .cyber-line {
+        margin: 1rem 0;
+    }
+}
+
+
+
+
+.hero-image {
+    background-image: url('./new_speaker/tedxtheme.jpg');
+    width: 100%;
+    
+    aspect-ratio: 16 / 9; /* Replace with your image's actual aspect ratio */
+    background-size: contain; /* or 'cover' depending on effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+   
+  }
+
+
+  @media (max-width: 1024px) {
+    .hero-image {
+      background-image: url('./new_speaker/theme_portrait.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Make the container full screen height */
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero-image {
+      background-image: url('./new_speaker/theme_portrait.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Make the container full screen height */
+    }
+  }
+  

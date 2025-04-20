@@ -1,0 +1,317 @@
+i<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Partner With Us | TEDx NIELIT Aurangabad Sponsorship Form</title>
+    <meta name="description" content="Become a TEDx NIELIT Aurangabad partner! Fill out our sponsorship form to collaborate, support innovation, and make an impact. Join us today!">
+
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Partner With Us | TEDx NIELIT Aurangabad Sponsorship Form">
+    <meta property="og:description" content="Join TEDx NIELIT Aurangabad as a partner! Fill out the sponsorship form and be part of an event that drives innovation and impact.">
+    <meta property="og:image" content="https://tedxnielitaurangabad.com/partner"> <!-- Replace with actual image -->
+    <meta property="og:url" content="https://tedxnielitaurangabad.com/partner">
+    <meta property="og:type" content="website">
+
+    <!-- Social Media Links -->
+    <meta property="og:see_also" content="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr">
+    <meta property="og:see_also" content="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld">
+    <meta property="og:see_also" content="mailto:tedxnielitaurangabad@gmail.com">
+  
+
+
+       <!-- Load config.js first -->
+    <script src="config.js" defer></script>
+
+
+
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="partner.css">
+    <link rel="stylesheet" href="fanfooter.css">
+    
+     <!-- favicon -->
+     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.jpg" alt="tedxnielitaurangabad">
+     <link rel="icon" type="image/png" sizes="16x16" href="./images/tedx.jpg" alt="tedxnielitaurangabad">
+     <link rel="apple-touch-icon" href="./images/favicon.jpg" alt="tedxnielitaurangabad"> <!-- iOS support -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="logo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="menu-overlay"></div>
+        <img src="#" alt="#" class="logo" id="logo">
+    
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active a1">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="tedxteam.html">TEDxTeam</a></li>
+                    <li><a href="aboutted.html">About TEDx</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="a1">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" class="a1">Speakers <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="pastspeakers.html" class="past_s">Past Speakers</a></li>
+                    <li><a href="speaker2025.html" class="upcoming_s">New Speakers</a></li>
+                </ul>
+            </li>
+            <li><a href="sponsors.html" class="a1">Sponsors</a></li>
+            <a href="tickets.html">
+                <button class="btn"> Get Tickets</button>
+            </a>
+        </ul>
+    
+         <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- Right-aligned hamburger -->
+    </nav>
+    
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger');
+    
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+    
+            if (navMenu.classList.contains('show')) {
+                hamburger.innerHTML = 'X';
+                document.body.style.overflow = 'hidden';
+            } else {
+                hamburger.innerHTML = '☰';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    
+        // Mobile dropdown handling:
+        // Toggling when clicking on the dropdown header,
+        // but allowing links in the dropdown menu to work normally.
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    // If the click is within the dropdown-menu (the inner links), do nothing.
+                    if (e.target.closest('.dropdown-menu')) {
+                        return; // Let the link click proceed.
+                    }
+                    // Otherwise, toggle the dropdown (this covers clicking on the header text).
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        });
+    
+        // Close the mobile menu when clicking on the overlay
+        document.querySelector('.menu-overlay').addEventListener('click', toggleMenu);
+    </script>
+    
+    
+
+
+
+    <!-- main -->
+    <div class="min-h-screen">
+        <div class="partner-container">
+            <div class="text-center mb-16">
+                <h1 class="main-title">Partner With Us</h1>
+                <p class="hero-description">
+                    Join TEDxNIELITAurangabad in spreading innovative ideas and creating lasting impact.
+                </p>
+            </div>
+
+            <div class="form-container">
+                <div class="form-overlay"></div>
+                <form id="partnerForm" class="partner-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactName">Contact Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sponsorshipLevel">Sponsorship Level</label>
+                        <select id="sponsorshipLevel" name="sponsorshipLevel" required>
+                            <option value="">Select a level</option>
+                            <option value="title">Title Sponsor</option>
+                            <option value="financial">Financial Sponsor</option>
+                            <option value="media">Media Partner</option>
+                            <option value="inkind">In-Kind Provider</option>
+                            <option value="promotional">Promotional Partner</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        <i data-lucide="send"></i>
+                        Submit Partnership Request
+                    </button>
+                </form>
+
+                <div id="successMessage" class="success-message hidden">
+                    <i data-lucide="check-circle" class="success-icon"></i>
+                    <h3>Thank You!</h3>
+                    <p>We'll get back to you shortly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize EmailJS
+        emailjs.init("x2I-e17QDK5hP_Z7O"); // Replace with your actual Public Key
+
+        // Form handling
+        const form = document.getElementById('partnerForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Prepare form data for Email.js
+            const formData = {
+                companyName: document.getElementById('companyName').value,
+                contactName: document.getElementById('contactName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                sponsorshipLevel: document.getElementById('sponsorshipLevel').value,
+                message: document.getElementById('message').value
+            };
+
+            // Send email via Email.js
+            emailjs.send("service_icrn8yn", "template_ikg4nig", formData)
+                .then(() => {
+                    form.style.opacity = '0';
+                    setTimeout(() => {
+                        form.style.display = 'none';
+                        successMessage.classList.remove('hidden');
+                    }, 300);
+
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        form.style.display = 'grid';
+                        form.style.opacity = '1';
+                        successMessage.classList.add('hidden');
+                    }, 3000);
+                })
+                .catch(() => {
+                    alert("Failed to send message. Please try again.");
+                });
+        });
+    </script>
+
+<footer class="tedx-footer">
+    <div class="footer-container">
+        <div class="brand-section">
+            <div class="tedx-heading">TED <sup class="sup">x</sup></div>
+            <div class="subheading">NIELITAurangabad</div>
+            <p class="tagline">Ideas worth spreading from the heart of Aurangabad.</p>
+        </div>
+
+        <div class="links-section">
+            <div class="subheading">Quick Links</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                   <li><a href="tickets.html#terms">Terms & Condition</a></li>
+                    <li><a href="tickets.html#refund">Refund Policy</a></li>
+                    <li><a href="tickets.html#privacy">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-social-wrapper">
+                <div class="contact-info">
+                    <div class="subheading">Contact Us</div>
+                    <div>
+                        <i class="fas fa-envelope" style="color: red; margin-right: 2px;"></i>
+                        <a href="mailto:tedxnielitaurangabad@gmail.com" class="email-link">tedxnielitaurangabad@gmail.com</a>
+                        </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt" style="color: red; margin-right: 10px;"></i>
+                                                 NIELIT Aurangabad, Maharashtra
+                        </div>
+                </div>
+                
+                <div class="follow-us-section">
+                    <div class="subheading">Follow Us</div>
+                    <div class="social-icons">
+                        <a href="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:tedxnielitaurangabad@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#"><i class="fa-regular gsdfgdgfa-envelope" style="color: #ffffff;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="copyright">
+        <div>© 2025 TEDXNELITAurangabad. All rights reserved.</div>
+        <div>This independent TEDx event is operated under license from TED.</div>
+    </div>
+    
+<!-- Back to Top Button -->
+<div class="back-to-top hidden" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+            // Show button only after user scrolls past 100px
+            if (window.scrollY > 100) {
+                backToTopButton.classList.remove("hidden");
+            } else {
+                backToTopButton.classList.add("hidden");
+            }
+        });
+
+        // Smooth Scroll to Top
+        backToTopButton.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Debugging: Ensure button is actually in the DOM
+        console.log("Button Loaded:", backToTopButton);
+    });
+</script>
+
+</footer>
+</body>
+</html>

@@ -3,72 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Title for SEO -->
+    <title>TEDx NIELIT Aurangabad 2025 | Igniting Ideas, Inspiring Change</title>
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Join TEDx NIELIT Aurangabad on 04 May, 2025,In Chhatrapati Sambhaji Nagar for a transformative event featuring visionary speakers, groundbreaking ideas.Secure your spot today! for  thought-provoking conversations, Witness innovation, leadership, and inspiration in action.">
+
+    <meta name="keywords" content="Sambhaji nagar,nielit aurangabad, TEDx 2025 India, inspirational events in Aurangabad, book TEDx pass, TEDx speaker event, ideas worth spreading, NIELITAurangabad, nielitaurangabad, tedx chatrapati samhaji nagar,tickets , tedx nielit, nielit tedx ticket">
+    
+    <!-- Open Graph (OG) Meta Tags for Social Media -->
+    <meta property="og:title" content="TEDx NIELIT Aurangabad 2025 | Igniting Ideas, Inspiring Change">
+    <meta property="og:description" content="A TEDx event featuring powerful talks, innovation, and networking. Join us at TEDx NIELIT Aurangabad 2025!">
+    <meta property="og:image" content="https://tedxnielitaurangabad.com/TEDx%20nav%20logo_20250225_200235_0000.png"> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://tedxnielitaurangabad.com"> 
+    <meta property="og:type" content="website">
+    
+    <!-- Social Media Links -->
+    <meta property="og:see_also" content="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr">
+    <meta property="og:see_also" content="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld">
+    <meta property="og:see_also" content="mailto:tedxnielitaurangabad@gmail.com">
+    
+    <!-- Twitter Card for Better Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TEDx NIELIT Aurangabad 2025 | Igniting Ideas, Inspiring Change">
+    <meta name="twitter:description" content="Join TEDx NIELIT Aurangabad 2025 for inspiring talks and transformative ideas.">
+    <meta name="twitter:image" content="https://tedxnielitaurangabad.com">
+
+
+
+    <!-- Standard Favicon (.ico for most browsers) -->
+<link rel="icon" href="./favicon_io/favicon.ico" type="image/x-icon">
+
+<!-- PNG Icons (for modern browsers) -->
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./favicon_io/android-chrome-512x512.png">
+
+<!-- Apple Touch Icon (for iOS devices) -->
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+
+<!-- Theme color for Android & modern browsers -->
+<meta name="theme-color" content="#ff2b06" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+<!-- iOS Safari status bar color -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" media="(prefers-color-scheme: dark)">
+
+
+
+    
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="index_theme.css">
+    <link rel="stylesheet" href="index_theme_eventx.css">
+
+    <link rel="stylesheet" href="countdown.css">
+    <script src="intro_video.js"></script>
+    <script src="logo.js"></script>
+
+    <!-- theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+
     <script src="https://kit.fontawesome.com/8c749cbaf2.js" crossorigin="anonymous"></script>
-    
+    <!-- arrow -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="0S4qYwDj4CY8M-W5aETaYw-AAXc5f5cOVyRbbMW6v8g" />
 </head>
 <body>
-    <!-- intro video -->
     <div id="intro-video-container">
-        <video id="intro-video" autoplay muted>
-            <source src="videos/intro.mp4" type="video/mp4">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="./intro_video/Black White Neon We Are Open Countdown Mobile Video (Video)_20250313_190003_0002.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        
     </div>
     
     <div id="main-content" class="hidden">
         <nav>
-       
-            <img src="TEDx nav logo.png" alt="#" class="logo">
+            <div class="menu-overlay"></div>
+            <img src="#" alt="#" class="logo" id="logo">
         
-           
-            <ul>
-                <li><a href="" class="active a1">Home</a></li>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active a1">Home</a></li>
                 <li class="dropdown">
-                    <a href="#">About</a>
+                    <a href="#" class="nav-link">About <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#tedx-team">TEDxTeam</a></li>
-                        <li><a href="about.html">About TEDx</a></li>
+                        <li><a href="tedxteam.html">TEDxTeam</a></li>
+                        <li><a href="aboutted.html">About TEDx</a></li>
                     </ul>
                 </li>
                 <li><a href="contact.html" class="a1">Contact</a></li>
-                <li><a href="speaker.html" class="a1">Speakers Form</a></li>
+                <li class="dropdown">
+                    <a href="#" class="a1">Speakers <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pastspeakers.html" class="past_s">Past Speakers</a></li>
+                        <li><a href="speaker2025.html" class="upcoming_s">New Speakers</a></li>
+                    </ul>
+                </li>
                 <li><a href="sponsors.html" class="a1">Sponsors</a></li>
-                
-                <a href="#">
-                    <button class="btn"> Ticket</button>
+                <a href="tickets.html">
+                    <button class="btn"> Get Tickets</button>
                 </a>
             </ul>
-            <div class="icon">
-                <i id="bar" class="fa-sharp fa-solid fa-bars-staggered"></i>
-            </div>
-            
-           
+        
+             <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- Right-aligned hamburger -->
         </nav>
         
+        <script>
+            // Function to toggle the mobile menu
+            function toggleMenu() {
+                const navMenu = document.querySelector('.nav-menu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger');
+        
+                navMenu.classList.toggle('show');
+                overlay.classList.toggle('active');
+        
+                if (navMenu.classList.contains('show')) {
+                    hamburger.innerHTML = 'X';
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    hamburger.innerHTML = '☰';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        
+            // Mobile dropdown handling:
+            // Toggling when clicking on the dropdown header,
+            // but allowing links in the dropdown menu to work normally.
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        // If the click is within the dropdown-menu (the inner links), do nothing.
+                        if (e.target.closest('.dropdown-menu')) {
+                            return; // Let the link click proceed.
+                        }
+                        // Otherwise, toggle the dropdown (this covers clicking on the header text).
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+        
+            // Close the mobile menu when clicking on the overlay
+            document.querySelector('.menu-overlay').addEventListener('click', toggleMenu);
+        </script>
+        
+        
+
+
         <script src="index.js"></script>
 
 
     </div>
-    
-
-    <!-- particle effect -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- particle effect -->
     <div id="particles-js"></div>
     <div class="container">
-        <img src="D:\navbar\TEDx nav logo_20250225_200235_0000.png" alt="TEDxNielitAurangabad">
+        <img src="TEDx nav logo_20250225_200235_0000.png" alt="TEDxNielitAurangabad">
+        <h2 class="event_tag" style="color: antiquewhite;">Innovation begins with a single idea</h2>
     </div>
-
+    
+       
+   
+   
     <script src="script.js"></script>
  
     <!-- Book Button -->
-     <seection class="book">
-        <button class="book-btn">Book Ticket</button>
-     </seection>
-    
-    
+     <section class="book">
+        <a href="tickets.html"><button class="book-btn">Get Tickets</button></a>
+     </section>
 
+    </section>
+
+    <section class="themex">
+
+
+        <div class="hero-image"></div>
+        <div class="overthemess"></div>
+
+
+
+    </section>
+
+
+    <section class="cyber-theme">
+        <div class="wave-divider-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        
+        <div class="cyber-glow"></div>
+        <canvas class="cyber-particles"></canvas>
+        
+        <div class="cyber-content">
+            <div class="cyber-text">
+                <p class="cyber-line">In every step we take through shadows and light,</p>
+                <p class="cyber-line">We carve the path where dreams ignite.</p>
+                <p class="cyber-line">With hearts unshaken and visions wide,</p>
+                <p class="cyber-line">We chase the dawn on the turning tide.</p>
+            </div>
+        </div>
+    </section>
+  
+    
+    <section class="event-header">
+        <h1>Event</h1>
+        <div class="scroll-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <section class="reasons">
+        <h2>Reasons to Attend</h2>
+        <p class="subtitle">Immerse yourself in a space that fosters creativity, curiosity, and open dialogue — perfect for sparking new ideas or finding your next inspiration.</p>
+
+        <div class="cards-container">
+          <div class="card">
+            <div class="number">1</div>
+            <i class="card-icon fas fa-lightbulb"></i>
+            <h3>Diverse Ideas</h3>
+            <p>Experience thought-provoking talks from passionate speakers sharing innovative ideas, life experiences, and groundbreaking research.</p>
+          </div>
+
+          <div class="card">
+            <div class="number">2</div>
+            <i class="card-icon fas fa-users"></i>
+            <h3>Networking</h3>
+            <p>Enjoy live performances, interactive sessions, and exhibits that add a unique cultural and entertainment touch to the day.</p>
+          </div>
+
+          <div class="card">
+            <div class="number">3</div>
+            <i class="card-icon fas fa-theater-masks"></i>
+            <h3>Performances</h3>
+            <p>Enjoy live performances, interactive sessions, and exhibits that add a unique cultural and entertainment touch to the day.</p>
+          </div>
+
+          <div class="card">
+            <div class="number">4</div>
+            <i class="card-icon fas fa-book-reader"></i>
+            <h3>Cherished Tales</h3>
+            <p>Stories that inspire, real-life heroes showing their true superpowers. Not just a lecture, but a moving session with brilliant performances.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <section >
+
+        <div class="divider-with-outward-arrows">
+        
+            <hr class="divider-line" />
+           
+          </div>
+          
+
+
+
+      </section>
+
+
+
+
+
+      <section class="venue">
+        <h2>Venue</h2>
+        <div class="venue-container">
+          <div class="venue-info">
+            <div class="venue-image">
+              <img src="./new_speaker/auditorum.jpg" alt="Central Auditorium of Dr. Babasaheb Ambedkar Marathwada University" />
+            </div>
+            <div class="venue-card">
+              <i class="venue-icon fas fa-map-marker-alt"></i>
+              <h3>Location</h3>
+              <p>Central Auditorium of Dr. Babasaheb Ambedkar Marathwada University</p>
+              <p>Chhatrapati Sambhajinagar</p>
+
+            </div>
+            <div class="venue-card">
+              <i class="venue-icon fas fa-calendar-alt"></i>
+              <h3>Date & Time</h3>
+              <p>May 04, 2025</p>
+              <p>10:00 AM - 3:00 PM</p>
+            </div>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.687003649054!2d75.30994900432465!3d19.89543423415132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9824f7d59c39%3A0xdfec7c076e07b3d6!2sAuditorium!5e0!3m2!1sen!2sin!4v1745001291239!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+
+    
+    
+    
+    <footer class="tedx-footer">
+        <div class="footer-container">
+            <div class="brand-section">
+                <div class="tedx-heading">TED <sup class="sup">x</sup></div>
+                <div class="subheading">NIELITAurangabad</div>
+                <p class="tagline">Ideas worth spreading from the heart of Aurangabad.</p>
+            </div>
+
+            <div class="links-section">
+                <div class="subheading">Quick Links</div>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tickets.html#terms">Terms & Condition</a></li>
+                    <li><a href="tickets.html#refund">Refund Policy</a></li>
+                    <li><a href="tickets.html#privacy">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-social-wrapper">
+                    <div class="contact-info">
+                        <div class="subheading">Contact Us</div>
+                        <div>
+                            <i class="fas fa-envelope" style="color: red; margin-right: 2px;"></i>
+                            <a href="mailto:tedxnielitaurangabad@gmail.com" class="email-link">tedxnielitaurangabad@gmail.com</a>
+                            </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt" style="color: red; margin-right: 10px;"></i>
+                                                     NIELIT Aurangabad, Maharashtra
+                            </div>
+                    </div>
+                    
+                    <div class="follow-us-section">
+                        <div class="subheading">Follow Us</div>
+                        <div class="social-icons">
+                            <a href="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:tedxnielitaurangabad@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                            <a href="#"><i class="fa-regular gsdfgdgfa-envelope" style="color: #ffffff;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="copyright">
+            <div>© 2025 TEDXNELITAurangabad. All rights reserved.</div>
+            <div>This independent TEDx event is operated under license from TED.</div>
+        </div>
+        
+    <!-- Back to Top Button -->
+    <div class="back-to-top hidden" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopButton = document.getElementById("backToTop");
+
+            window.addEventListener("scroll", function () {
+                // Show button only after user scrolls past 100px
+                if (window.scrollY > 100) {
+                    backToTopButton.classList.remove("hidden");
+                } else {
+                    backToTopButton.classList.add("hidden");
+                }
+            });
+
+            // Smooth Scroll to Top
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            // Debugging: Ensure button is actually in the DOM
+            console.log("Button Loaded:", backToTopButton);
+        });
+    </script
+    
+    </footer>
+
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Update page title
+            document.title = "TEDx NIELIT Aurangabad 2025 | Ideas Worth Spreading";
+        
+            // Function to update or insert meta tags
+            function updateMetaTag(name, content) {
+                let meta = document.querySelector(meta[name="${name}"]) || document.createElement("meta");
+                meta.name = name;
+                meta.content = content;
+                document.head.appendChild(meta);
+            }
+            updateMetaTag("description", "Join TEDx NIELIT Aurangabad 2025 for an inspiring lineup of speakers, innovative ideas, and thought-provoking discussions. Explore groundbreaking insights shaping the future.");
+        
+            // Open Graph Meta Tags
+            let ogTags = [
+                { property: "og:title", content: "TEDx NIELIT Aurangabad 2025 | Ideas Worth Spreading" },
+                { property: "og:description", content: "Experience TEDx NIELIT Aurangabad 2025 with inspiring talks from visionary speakers. A journey into innovation, technology, and change." },
+                { property: "og:image", content: "https://tedxnielitaurangabad.com/TEDx%20nav%20logo_20250225_200235_0000.png" },
+                { property: "og:url", content: "https://tedxnielitaurangabad.com" },
+                { property: "og:type", content: "website" }
+            ];
+            
+            ogTags.forEach(tag => {
+                let metaTag = document.querySelector(meta[property="${tag.property}"]) || document.createElement("meta");
+                metaTag.setAttribute("property", tag.property);
+                metaTag.content = tag.content;
+                document.head.appendChild(metaTag);
+            });
+        
+            // Twitter Meta Tags
+            let twitterTags = [
+                { name: "twitter:card", content: "summary_large_image" },
+                { name: "twitter:title", content: "TEDx NIELIT Aurangabad 2025 | Ideas Worth Spreading" },
+                { name: "twitter:description", content: "Join TEDx NIELIT Aurangabad 2025 for an unforgettable event filled with thought-provoking talks and groundbreaking ideas." },
+                { name: "twitter:image", content: "https://tedxnielitaurangabad.com/assets/images/event-banner.jpg" },
+                { name: "twitter:url", content: "https://tedxnielitaurangabad.com" }
+            ];
+        
+            twitterTags.forEach(tag => {
+                let metaTag = document.querySelector(meta[name="${tag.name}"]) || document.createElement("meta");
+                metaTag.name = tag.name;
+                metaTag.content = tag.content;
+                document.head.appendChild(metaTag);
+            });
+        
+            // Add JSON-LD Structured Data for Home Page
+            let schemaScript = document.createElement("script");
+            schemaScript.type = "application/ld+json";
+            schemaScript.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": "TEDx NIELIT Aurangabad 2025",
+                "description": "TEDx NIELIT Aurangabad 2025 brings together thought leaders, innovators, and changemakers to share powerful ideas and insights.",
+                "startDate": "2025-10-15",
+                "location": {
+                    "@type": "Aurangabad, Maharashtra",
+                    "name": "NIELIT Aurangabad",
+                    "address": "Dr. B. A. Marathwada University, Aurangabad, Maharashtra, India"
+                },
+                "image": ["https://tedxnielitaurangabad.com/assets/images/event-banner.jpg"],
+                "url": "https://tedxnielitaurangabad.com",
+                "organizer": {
+                    "@type": "Nielit Aurangabad",
+                    "name": "TEDx NIELIT Aurangabad",
+                    "url": "https://tedxnielitaurangabad.com"
+                }
+            });
+            document.head.appendChild(schemaScript);
+        });
+        </script>
 
 
 </body>

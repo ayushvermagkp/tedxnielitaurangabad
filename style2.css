@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    scroll-behavior: auto !important;
+}
 
 html {
     font-size: 16px; /* Base font size for rem units */
@@ -16,13 +19,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 /* Fullscreen Intro Video */
-/* Fullscreen Intro Video */
-#intro-video-container {
+ /* Full-screen video container */
+ #intro-video-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: black;
     display: flex;
     justify-content: center;
@@ -30,12 +33,21 @@ body {
     z-index: 9999;
 }
 
-/* Make video cover the full screen */
+/* Ensure video fits the screen properly */
 #intro-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+
+
+/* Hide homepage initially */
+#homepage {
+    display: none;
+}
+
+
 
 /* Hide the main content until the video ends */
 .hidden {
@@ -49,9 +61,24 @@ body {
 }
 
 
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
 /* Particle Background */
 #particles-js {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -59,6 +86,7 @@ body {
     z-index: -1; /* Pushes it behind other elements */
     
 }
+
 
 /* Responsive Container */
 .container {
@@ -74,6 +102,31 @@ body {
     width: 100%;
     max-width: 75rem;
     padding: 1.25rem;
+ 
+}
+
+.event_tag{
+    margin-bottom: 8rem;
+    font-size: 2rem; /* Equivalent to text-xl */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    font-family: Lucida Console;
+}
+.event_tag:hover {
+    color: rgb(255, 15, 15) !important;
+}
+/* Hover effect for larger screens (min-width: 640px) */
+@media (min-width: 640px) {
+    .event_tag:hover {
+        color: rgb(241, 0, 0);
+    }
+}
+
+/* Click effect for small screens (max-width: 639px) */
+@media (max-width: 639px) {
+    .event_tag:active {
+        transform: scale(0.95);
+    }
 }
 
 .container img {
@@ -81,24 +134,50 @@ body {
     height: auto;
     object-fit: contain;
     position: sticky;
+    
 }
 
 /* Adjust Image with rem for Mobile Responsiveness */
 @media (max-width: 64rem) { /* 1024px */
     .container img {
         max-width: 25rem;
+        font-family: Verdana;
     }
+    .event_tag:active,
+.event_tag:focus {
+    color: rgba(216, 0, 0, 0.966);
+}
 }
 
 @media (max-width: 50rem) { /* 800px */
     .container img {
         max-width: 20rem;
     }
+    .event_tag:active,
+.event_tag:focus {
+    color: rgba(216, 0, 0, 0.966);
+}
+    .event_tag{
+        font-size: medium;
+        font-family: Verdana;
+    }
 }
 
 @media (max-width: 30rem) { /* 480px */
     .container img {
-        max-width: 10rem;
+        max-width: 23rem;
+        margin-bottom: 0rem;
+       
+    }
+    .event_tag:active,
+.event_tag:focus {
+    color: rgba(216, 0, 0, 0.966);
+}
+    .event_tag{
+        font-size: medium;
+        font-family: Verdana;
+        font-size: .8rem;
+        
     }
 }
 
@@ -119,8 +198,33 @@ nav {
 nav .logo {
     width: 20.375rem;
     height: auto;
+    margin-right: 20rem;
+}
+/* logo size */
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    nav .logo {
+        width: 16rem; /* Reduce logo size */
+    }
 }
 
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    nav .logo {
+        width: 12rem; /* Smaller size for mobile */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    nav .logo {
+        max-width: 1200px; /* Resize but keep aspect ratio */
+        height: auto;
+        width: 80%;
+       margin-right: 1rem;
+    
+    }
+}
 /* Navbar List Items */
 nav ul {
     list-style: none;
@@ -166,7 +270,7 @@ nav ul .dropdown-menu li a::after {
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: white;
+    background: red ;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
 }
@@ -180,21 +284,11 @@ nav ul .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Responsive Menu Dropdown */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    
-    nav ul .dropdown-menu {
-        position: static;
-        display: none;
-        width: 100%;
-    }
-
-    nav ul .dropdown:hover .dropdown-menu {
-        display: block;
-    }
+/* drop down box arrow */
+.nav-link i {
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 nav ul  li{
@@ -213,7 +307,7 @@ nav ul li a {
 }
 /* Navbar Ticket Button (3D Red to White Gradient) */
 nav .btn {
-    background: linear-gradient(135deg, #ff0000, #ffffff); /* Red to White gradient */
+    background: red; /* Red to White gradient */
     border: none;
     color: black;
     padding: 12px 30px;
@@ -222,7 +316,7 @@ nav .btn {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 3D Shadow Effect */
+    box-shadow: 0 6px 12px rgba(211, 210, 210, 0.3); /* 3D Shadow Effect */
     text-align: center;
     font-family: Arial, sans-serif;
     position: relative;
@@ -232,7 +326,7 @@ nav .btn {
 /* Hover Effect (Turns White) */
 nav .btn:hover {
     background: white;
-    color: red;
+    color: black;
     transform: scale(1.05) translateY(-3px); /* Lift effect */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
@@ -252,7 +346,7 @@ nav ul li a::after {
     bottom: -0.125rem;
     width: 100%;
     height: 0.125rem;
-    background-color: white;
+    background-color: red;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease-in-out;
@@ -274,25 +368,99 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 48rem) { /* 768px */
-    nav ul {
-        display: none;
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+
+/* navbar-checking */
+/* Mobile Navigation Overrides (for screens 768px and below) */
+/* Modified Mobile Responsive Menu */
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Right-aligned hamburger */
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1000;
+        background: none;
+        border: none;
+        color: white;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 75%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
         flex-direction: column;
-        position: absolute;
-        top: 3.75rem;
+        padding: 80px 30px 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto; /* Allow scrolling if needed */
+    }
+
+    .nav-menu.show {
+        left: 0;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        background: transparent !important;
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+        max-height: 500px; /* Expand to fit content */
+        opacity: 1;
+        transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+    }
+
+    .dropdown.active + li {
+        margin-top: 8rem; /* Push down the next menu item */
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        text-align: center;
-        padding: 0.625rem 0;
+        height: 100%;
+        background: transparent;
+        backdrop-filter: blur(5px);
+        display: none;
+        z-index: 998;
     }
-    
-    .icon {
+
+    .menu-overlay.active {
         display: block;
     }
-    
-    .showData {
+
+    .nav-menu .nav-item {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown > a {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -310,10 +478,12 @@ nav ul li a:hover {
     width: 100%;
     text-align: center;
 }
-
+@media screen {
+    
+}
 /* Style the Book Ticket button */
 .book-btn {
-    background: linear-gradient(135deg, #810000, #feb47b);
+    background: red;
     border: none;
     color: white;
     padding: 20px 80px;
@@ -325,9 +495,471 @@ nav ul li a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
+@media (max-width: 480px) {
+    .book-btn{
+        margin-bottom: 7rem;
+    }
+}
+@media(max-width:768px){
+    .book-btn{
+        margin-bottom: 7rem;
+    }
+}
 .book-btn:hover {
     background: linear-gradient(135deg, #feb47b, #ff7e5f);
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
+
+
+/* Theme Section */
+.theme {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.theme-title {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.tedx {
+    color: red;
+}
+
+.nielit {
+    color: white;
+}
+
+/* typing effect  */
+/* Theme Section */
+.theme {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.theme-title {
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    animation: typing 15s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* Typing Effect Animation */
+/* Typing Effect Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 43%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Default Style (Large Screens) */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .theme-title {
+        font-size: 2.5rem;
+        animation: typing 12s steps(25, end) forwards, blink 0.75s step-end infinite;
+
+    }
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 70%;
+        }
+    }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .theme-title {
+        font-size: 2.0rem;
+        animation: typing 12s steps(25, end) forwards, blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 80%;
+        }
+    }
+}
+
+/* Extra Small Screens (Phones ≤ 480px) */
+@media (max-width: 480px) {
+    .theme-title {
+            font-size: 1.5rem;
+            animation: typing 12s steps(25, end) forwards, blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 85%;
+        }
+    }
+}
+
+
+
+.tedx {
+    color: red;
+}
+
+.nielit {
+    color: white;
+}
+
+/* New Section with Background Image and Gradient */
+.image-section {
+    background: url('banner.png') center/cover no-repeat, ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: -webkit-fill-available; /* Ensure full height on iOS */
+}
+.image-section {
+    background-image: url('banner.png');
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+}
+@media (max-width: 1200px) {
+    .image-section {
+        
+        height: 110vh;
+        background-size: cover; /* Maintain aspect ratio on large screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .image-section {
+        min-height: 110vh; /* Ensure full height */
+        background-size: cover;
+        background-image: url("./images/tedx.jpg");
+        min-height: -webkit-fill-available; /* Ensure full height on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    .image-section {
+        min-height: 115dvh; /* Ensure full height */
+        background-size: cover;
+        background-image: url('./images/tedx.jpg'); /* Ensures full fit for very small screens */
+       
+    }
+}
+
+
+
+
+/* footer section of index file */
+
+
+
+.tedx-footer {
+    background:black;
+    color: #ffffff;
+    padding: 100px 50px 50px;
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin-right: 300px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.brand-section {
+    flex: 2;
+    min-width: 300px;
+   
+}
+
+.links-section {
+    flex: 1.2;
+    min-width: 150px;
+    
+}
+
+.contact-section {
+    flex: 1.5;
+    min-width: 250px;
+   
+}
+.email-link {
+color: white;
+text-decoration: none;
+padding: 5px;
+transition: background-color 0.3s;
+margin-right: 5px;
+}
+
+.email-link:hover {
+color: red;
+}
+
+.tedx-heading {
+    color: #e62b1e;
+    font-size: 36px;
+    margin-bottom: 4px;
+}
+
+.subheading {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
+    align-items: center; /* Align text and icon in a row */
+}
+.contact-info div {
+    display: flex;
+    align-items: center; /* Ensures icons and text align properly */
+    margin-bottom: 8px; /* Add spacing between each contact detail */
+}
+
+.tagline {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 280px;
+}
+
+.footer-links {
+    list-style: none;
+    line-height: 1.8;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e62b1e;
+}
+
+.contact-info {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.contact-social-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.follow-us-section {
+    margin-left: 40px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e62b1e;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+  }
+
+  /* Footer styling */
+  .site-footer {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+
+  
+  
+
+
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .tagline {
+        max-width: none;
+        margin: 0;
+        text-align: left;
+    }
+
+    .brand-section {
+        text-align: left;
+    }
+
+    .tedx-heading, .subheading {
+        text-align: left;
+    }
+
+    .contact-social-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .follow-us-section {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+
+/* Back to top arrow styling */
+/* Ensure footer has relative positioning */
+.footer {
+    position: relative;
+}
+
+/* Place back-to-top button inside the footer */
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 5%;
+        right: 5%;
+        width: 60px;
+        height: 60px;
+        background-color: #e62b1e; /* Red Circle */
+        color: white; /* White Arrow */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+        opacity: 1; /* Make sure it's visible */
+        visibility: visible;
+        z-index: 1000;
+    }
+
+    .back-to-top i {
+        font-size: 28px;
+    }
+
+    .back-to-top:hover {
+        background-color: #c22218; /* Darker Red on Hover */
+        transform: scale(1.1);
+    }
+
+    /* Hide Button Initially */
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .back-to-top {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            bottom: 10%;
+            right: 5%;
+        }
+
+        .back-to-top i {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .back-to-top {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            bottom: 12%;
+            right: 5%;
+        }
+
+        .back-to-top i {
+            font-size: 20px;
+        }
+    }

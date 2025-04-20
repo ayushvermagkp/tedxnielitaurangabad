@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    color: white;
+    background: linear-gradient(to bottom, #111827, #1f2937, #111827);
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    width: 20.375rem;
+    height: auto;
+    margin-right: 20rem;
+}
+/* logo size */
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    nav .logo {
+        width: 16rem; /* Reduce logo size */
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    nav .logo {
+        width: 12rem; /* Smaller size for mobile */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    nav .logo {
+        max-width: 1200px; /* Resize but keep aspect ratio */
+        height: auto;
+        width: 80%;
+       margin-right: 1rem;
+    
+    }
+}
+/* Navbar List Items */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    position: relative;
+}
+
+/* Style Dropdown Parent */
+nav ul .dropdown {
+    position: relative;
+}
+
+/* Hide Dropdown Menu Initially */
+nav ul .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    list-style: none;
+    padding: 10px 0;
+    width: 150px;
+    display: none;
+    text-align: left;
+    border-radius: 5px;
+}
+
+/* Style Dropdown Links */
+nav ul .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Hover Effect - White Underline */
+nav ul .dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: red ;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul .dropdown-menu li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Show Dropdown on Hover */
+nav ul .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* drop down box arrow */
+.nav-link i {
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+nav ul  li{
+    padding-top: 10px;
+}
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+    
+}
+/* Navbar Ticket Button (3D Red to White Gradient) */
+nav .btn {
+    background: red; /* Red to White gradient */
+    border: none;
+    color: black;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 12px rgba(211, 210, 210, 0.3); /* 3D Shadow Effect */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+/* Hover Effect (Turns White) */
+nav .btn:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05) translateY(-3px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Click Effect (Press Down) */
+nav .btn:active {
+    transform: scale(1) translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Underline hover effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.125rem;
+    width: 100%;
+    height: 0.125rem;
+    background-color: red;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: rgb(255, 147, 147);
+}
+
+/* Mobile Responsive Menu */
+.icon {
+    display: none;
+    font-size: 1.5625rem;
+    color: white;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+
+/* navbar-checking */
+/* Mobile Navigation Overrides (for screens 768px and below) */
+/* Modified Mobile Responsive Menu */
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Right-aligned hamburger */
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1000;
+        background: none;
+        border: none;
+        color: white;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 75%;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 80px 30px 20px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        overflow-y: auto; /* Allow scrolling if needed */
+    }
+
+    .nav-menu.show {
+        left: 0;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        background: transparent !important;
+        padding: 10px;
+        border-radius: 5px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+        max-height: 500px; /* Expand to fit content */
+        opacity: 1;
+        transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+    }
+
+    .dropdown.active + li {
+        margin-top: 8rem; /* Push down the next menu item */
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        backdrop-filter: blur(5px);
+        display: none;
+        z-index: 998;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    .nav-menu .nav-item {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+/* main */
+.partner-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+.main-title{
+    margin-bottom: 4rem;
+    font-size:250% ;
+}
+
+.form-container {
+    background: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(239, 68, 68, 0.05), rgba(168, 85, 247, 0.05));
+}
+
+.partner-form {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #d1d5db;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(to right, #ef4444, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.submit-button:hover {
+    opacity: 0.9;
+}
+
+.submit-button i {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.success-message {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.success-message.hidden {
+    display: none;
+}
+
+.success-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #10b981;
+    margin: 0 auto 1rem;
+}
+
+.success-message h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #10b981;
+    margin-bottom: 0.5rem;
+}
+
+.success-message p {
+    color: #d1d5db;
+}
+

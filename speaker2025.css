@@ -1,0 +1,580 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+main{
+  margin-top: 10rem;
+ 
+}
+main.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make sure main takes the full screen height */
+  position: relative;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  width: 100%;  /* Ensure the width covers the entire main section */
+  height: 100%; /* Ensure the height covers the entire main section */
+  z-index: -1; /* Keep the particle effect behind content */
+}
+.main-content {
+  position: relative;
+  z-index: 1;
+  flex: 1; /* Take up all available space */
+  padding: 2rem;
+  overflow: hidden; /* Hide content overflow */
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+nav .logo {
+  width: 20.375rem;
+  height: auto;
+  margin-right: 20rem;
+}
+/* logo size */
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  nav .logo {
+      width: 16rem; /* Reduce logo size */
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  nav .logo {
+      width: 12rem; /* Smaller size for mobile */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  nav .logo {
+      max-width: 1200px; /* Resize but keep aspect ratio */
+      height: auto;
+      width: 80%;
+     margin-right: 1rem;
+  
+  }
+}
+/* Navbar List Items */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  position: relative;
+}
+
+/* Style Dropdown Parent */
+nav ul .dropdown {
+  position: relative;
+}
+
+/* Hide Dropdown Menu Initially */
+nav ul .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  list-style: none;
+  padding: 10px 0;
+  width: 150px;
+  display: none;
+  text-align: left;
+  border-radius: 5px;
+}
+
+/* Style Dropdown Links */
+nav ul .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Hover Effect - White Underline */
+nav ul .dropdown-menu li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: red ;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul .dropdown-menu li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Show Dropdown on Hover */
+nav ul .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* drop down box arrow */
+.nav-link i {
+  color: white;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+nav ul  li{
+  padding-top: 10px;
+}
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+  
+}
+/* Navbar Ticket Button (3D Red to White Gradient) */
+nav .btn {
+  background: red; /* Red to White gradient */
+  border: none;
+  color: black;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(211, 210, 210, 0.3); /* 3D Shadow Effect */
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover Effect (Turns White) */
+nav .btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05) translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Click Effect (Press Down) */
+nav .btn:active {
+  transform: scale(1) translateY(2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Underline hover effect */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.125rem;
+  width: 100%;
+  height: 0.125rem;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+nav ul li a:hover {
+  color: rgb(255, 147, 147);
+}
+
+/* Mobile Responsive Menu */
+.icon {
+  display: none;
+  font-size: 1.5625rem;
+  color: white;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+
+/* navbar-checking */
+/* Mobile Navigation Overrides (for screens 768px and below) */
+/* Modified Mobile Responsive Menu */
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
+      position: fixed;
+      top: 20px;
+      right: 20px; /* Right-aligned hamburger */
+      font-size: 32px;
+      cursor: pointer;
+      z-index: 1000;
+      background: none;
+      border: none;
+      color: white;
+  }
+
+  .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      height: 100vh;
+      width: 75%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      padding: 80px 30px 20px;
+      transition: left 0.3s ease;
+      z-index: 999;
+      overflow-y: auto; /* Allow scrolling if needed */
+  }
+
+  .nav-menu.show {
+      left: 0;
+  }
+
+  .dropdown-menu {
+      position: relative;
+      background: transparent !important;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  .dropdown.active .dropdown-menu {
+      display: block;
+      max-height: 500px; /* Expand to fit content */
+      opacity: 1;
+      transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+  }
+
+  .dropdown.active + li {
+      margin-top: 8rem; /* Push down the next menu item */
+  }
+
+  .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      backdrop-filter: blur(5px);
+      display: none;
+      z-index: 998;
+  }
+
+  .menu-overlay.active {
+      display: block;
+  }
+
+  .nav-menu .nav-item {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown > a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+main {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ff2b2b;
+  text-shadow: 0 0 10px rgba(255, 43, 43, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+h1 i {
+  font-size: 2rem;
+}
+
+.tedx-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tedx-intro:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.speaker-card {
+  background: rgba(17, 17, 17, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 43, 43, 0.1);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.speaker-card:hover, .speaker-card:active {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 43, 43, 0.3);
+  border-color: rgba(255, 43, 43, 0.5);
+}
+
+.speaker-image {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ff2b2b;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.speaker-card:hover .speaker-image, .speaker-card:active .speaker-image {
+  box-shadow: 0 0 35px rgba(255, 43, 43, 0.5);
+  transform: rotate(5deg) scale(1.05);
+}
+
+.speaker-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.speaker-card:hover .speaker-image::after, .speaker-card:active .speaker-image::after {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+.speaker-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.speaker-card:hover .speaker-image img, .speaker-card:active .speaker-image img {
+  transform: scale(1.1);
+}
+
+.speaker-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.speaker-card:hover h2, .speaker-card:active h2 {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.speaker-card .topic {
+  color: #ff2b2b;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.speaker-card:hover .topic, .speaker-card:active .topic {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.speaker-card .topic i {
+  font-size: 1.3rem;
+}
+
+.speaker-card .bio {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.speaker-card:hover .bio, .speaker-card:active .bio {
+  opacity: 1;
+}
+
+.tedx-quote {
+  color: #ff2b2b;
+  font-style: italic;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  text-shadow: 0 0 10px rgba(255, 43, 43, 0.3);
+}
+
+.speaker-card:hover .tedx-quote, .speaker-card:active .tedx-quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .speakers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .speakers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .speaker-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tedx-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  nav a {
+    min-width: 7rem;
+    font-size: 0.9rem;
+  }
+
+  .speaker-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  .speaker-card {
+    padding: 1rem;
+  }
+
+  .speaker-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .speaker-card .bio {
+    font-size: 0.9rem;
+  }
+
+  .tedx-quote {
+    font-size: 1rem;
+  }
+
+  .speaker-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .speaker-card .topic {
+    font-size: 1.1rem;
+  }
+}
+
+
+
+

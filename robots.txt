@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /aboutted.html
+Allow: /index.html

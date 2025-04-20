@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <title>Past TEDx Past Speakers | TEDx NIELIT Aurangabad Inspiring Talks</title>
+    <meta name="description" content="Explore the thought-provoking talks from past TEDx NIELIT Aurangabad past speakers. Discover ideas that inspire innovation, change, and impact.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Past TEDx Speakers | TEDx NIELIT Aurangabad Inspiring Talks">
+    <meta property="og:description" content="Meet the past TEDx NIELIT Aurangabad speakers who have shared groundbreaking ideas. Watch inspiring talks that spark innovation and change.">
+    <meta property="og:image" content="https://tedxnielitaurangabad.com/tedx_speaker/yashraj%20mukhate.jpg"> <!-- Replace with actual image -->
+    <meta property="og:url" content="https://tedxnielitaurangabad.com/pastspeakers">
+    <meta property="og:type" content="website">
+
+    <!-- Social Media Links -->
+    <meta property="og:see_also" content="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr">
+    <meta property="og:see_also" content="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld">
+    <meta property="og:see_also" content="mailto:tedxnielitaurangabad@gmail.com">
+
+    
+       <!-- Load config.js first -->
+    <script src="config.js" defer></script>
+
+
+
+    <link rel="stylesheet" href="pastspeakers.css">
+    <link rel="stylesheet" href="navbar.css">
+     <!-- favicon -->
+     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.jpg" alt="tedxnielitaurangabad">
+     <link rel="icon" type="image/png" sizes="16x16" href="./images/tedx.jpg" alt="tedxnielitaurangabad">
+     <link rel="apple-touch-icon" href="./images/favicon.jpg" alt="tedxnielitaurangabad"> <!-- iOS support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="logo.js"></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="menu-overlay"></div>
+        <img src="#" alt="#" class="logo" id="logo">
+    
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active a1">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="nav-link">About <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="tedxteam.html">TEDxTeam</a></li>
+                    <li><a href="aboutted.html">About TEDx</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="a1">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" class="a1">Speakers <i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="pastspeakers.html" class="past_s">Past Speakers</a></li>
+                    <li><a href="speaker2025.html" class="upcoming_s">New Speakers</a></li>
+                </ul>
+            </li>
+            <li><a href="sponsors.html" class="a1">Sponsors</a></li>
+            <a href="tickets.html">
+                <button class="btn"> Get Tickets</button>
+            </a>
+        </ul>
+    
+         <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- Right-aligned hamburger -->
+    </nav>
+    
+    <script>
+        // Function to toggle the mobile menu
+        function toggleMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger');
+    
+            navMenu.classList.toggle('show');
+            overlay.classList.toggle('active');
+    
+            if (navMenu.classList.contains('show')) {
+                hamburger.innerHTML = 'X';
+                document.body.style.overflow = 'hidden';
+            } else {
+                hamburger.innerHTML = '☰';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    
+        // Mobile dropdown handling:
+        // Toggling when clicking on the dropdown header,
+        // but allowing links in the dropdown menu to work normally.
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    // If the click is within the dropdown-menu (the inner links), do nothing.
+                    if (e.target.closest('.dropdown-menu')) {
+                        return; // Let the link click proceed.
+                    }
+                    // Otherwise, toggle the dropdown (this covers clicking on the header text).
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        });
+    
+        // Close the mobile menu when clicking on the overlay
+        document.querySelector('.menu-overlay').addEventListener('click', toggleMenu);
+    </script>
+    
+    
+
+    <div class="min-h-screen">
+        <!-- Hero Section - 2019 Speakers -->
+        <section class="hero-section">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-gradient"></div>
+            
+            <div class="container">
+                <div class="text-center">
+                    <div class="badge">
+                        <span>TED<sup>x</sup> NIELITAurangabad</span>
+                    </div>
+                    <h1>TED<sup>x</sup> 2019 Speakers</h1>
+                    <p class="hero-description">
+                        Experience the revolutionary ideas and inspiring stories that shaped TEDx NIELIT 2019. Our speakers challenged conventional thinking and sparked transformative conversations that continue to resonate today.
+                    </p>
+                    <div class="button-group">
+                        <a href="https://www.ted.com/tedx/events/35135" target="_blank" rel="noopener noreferrer" class="primary-button">
+                            Explore 2019 Talks
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="external-link-icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="https://youtu.be/5MowFBAHVwc?si=I_WAjUpfqX-Fl4Zv" target="_blank">
+                            <button class="secondary-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="play-icon">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                                Watch Highlights
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2022 Speakers Section -->
+        <section class="speakers-section">
+            <div class="section-gradient"></div>
+            <div class="container">
+                <div class="section-header">
+                    <div class="header-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="users-icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <h2>TED<sup>x</sup> NIELIT Aurangabad 2022</h2>
+                    </div>
+                    <p class="section-description">
+                        Discover the visionaries who took the stage in 2022, sharing groundbreaking ideas and inspiring stories that captivated our audience and sparked meaningful conversations.
+                    </p>
+                </div>
+
+                <div class="speakers-grid">
+                    <!-- Speaker 1 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/yashraj mukhate.jpg" alt="Yashraj Mukhate">
+                            </div>
+                            <h3>Yashraj Mukhate</h3>
+                            <p class="speaker-role"> An Indian music producer</p>
+                            <p class="speaker-topic"> Indian music producer, composer, YouTuber and social media personality</p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Speaker 2 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/shanaya.jpg" alt="Shanaya Shukla">
+                            </div>
+                            <h3>Shanaya Shukla</h3>
+                            <p class="speaker-role">Indian author, Mental Health Activist, Podcaster</p>
+                            <p class="speaker-topic">An 18 years old published Indian author</p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Speaker 3 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/sahil.jpg" alt="Sahil Horane">
+                            </div>
+                            <h3>Sahil Horane</h3>
+                            <p class="speaker-role">Stand-up Comedian</p>
+                            <p class="speaker-topic">Specializes in corporate shows,private shows and college events</p>
+                          
+                        </div>
+                    </div>
+
+                    <!-- Speaker 4 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/vamika.jpg" alt="Vanika Sangtani">
+                            </div>
+                            <h3>Vanika Sangtani</h3>
+                            <p class="speaker-role">storyteller and spoken word artist</p>
+                            <p class="speaker-topic">An incredible storyteller and the founder of 'Denied'</p>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Speaker 5 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/shams.jpg" alt="Mohammad Shams Aalam Shaikh">
+                            </div>
+                            <h3>Mohammad Shams Aalam Shaikh</h3>
+                            <p class="speaker-role">An Indian Para swimmer</p>
+                            <p class="speaker-topic"> Ranked Number 1 by the World Para Swimming (WPS)</p>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 6 -->
+                    <div class="speaker-card">
+                        <div class="card-gradient"></div>
+                        <div class="card-content">
+                            <div class="speaker-image">
+                                <img src="./tedx_speaker/babita.jpg" alt="Babita Patney">
+                            </div>
+                            <h3>Babita Patney</h3>
+                            <p class="speaker-role">An established Tarot Card reader </p>
+                            <p class="speaker-topic">Reimagining Education Systems and Acid attack survival</p>
+                            <div class="view-talk-badge"> A woman of fire and strength</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="tedx-footer">
+        <div class="footer-container">
+            <div class="brand-section">
+                <div class="tedx-heading">TED <sup class="sup">x</sup></div>
+                <div class="subheading">NIELITAurangabad</div>
+                <p class="tagline">Ideas worth spreading from the heart of Aurangabad.</p>
+            </div>
+
+            <div class="links-section">
+                <div class="subheading">Quick Links</div>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                   <li><a href="tickets.html#terms">Terms & Condition</a></li>
+                    <li><a href="tickets.html#refund">Refund Policy</a></li>
+                    <li><a href="tickets.html#privacy">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-section">
+                <div class="contact-social-wrapper">
+                    <div class="contact-info">
+                        <div class="subheading">Contact Us</div>
+                        <div>
+                            <i class="fas fa-envelope" style="color: red; margin-right: 2px;"></i>
+                            <a href="mailto:tedxnielitaurangabad@gmail.com" class="email-link">tedxnielitaurangabad@gmail.com</a>
+                            </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt" style="color: red; margin-right: 10px;"></i>
+                                                     NIELIT Aurangabad, Maharashtra
+                            </div>
+                    </div>
+                    
+                    <div class="follow-us-section">
+                        <div class="subheading">Follow Us</div>
+                        <div class="social-icons">
+                            <a href="https://youtube.com/@tedxnielitaurangabad?si=fJKv7fN99Lhf5jld" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/tedxnielitaurangabad?igsh=Y2l3ejB6Nzd4YWQ4&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="mailto:tedxnielitaurangabad@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                            <a href="#"><i class="fa-regular gsdfgdgfa-envelope" style="color: #ffffff;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="copyright">
+            <div>© 2025 TEDXNELITAurangabad. All rights reserved.</div>
+            <div>This independent TEDx event is operated under license from TED.</div>
+        </div>
+        
+    <!-- Back to Top Button -->
+    <div class="back-to-top hidden" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backToTopButton = document.getElementById("backToTop");
+
+            window.addEventListener("scroll", function () {
+                // Show button only after user scrolls past 100px
+                if (window.scrollY > 100) {
+                    backToTopButton.classList.remove("hidden");
+                } else {
+                    backToTopButton.classList.add("hidden");
+                }
+            });
+
+            // Smooth Scroll to Top
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            // Debugging: Ensure button is actually in the DOM
+            console.log("Button Loaded:", backToTopButton);
+        });
+    </script
+    
+    </footer>
+   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set dynamic page title if needed
+            document.title = "Past TEDx Speakers | TEDx NIELIT Aurangabad Inspiring Talks";
+        
+            // Set meta description dynamically
+            let metaDesc = document.createElement("meta");
+            metaDesc.name = "description";
+            metaDesc.content = "Explore the thought-provoking talks from past TEDx NIELIT Aurangabad speakers. Discover ideas that inspire innovation, change, and impact.";
+            document.head.appendChild(metaDesc);
+        
+            // Set Open Graph Meta Tags
+            let ogTags = [
+                { property: "og:title", content: "Past TEDx Speakers | TEDx NIELIT Aurangabad Inspiring Talks" },
+                { property: "og:description", content: "Meet the past TEDx NIELIT Aurangabad speakers who have shared groundbreaking ideas. Watch inspiring talks that spark innovation and change." },
+                { property: "og:image", content: "https://tedxnielitaurangabad.com/tedx_speaker/yashraj%20mukhate.jpg" },
+                { property: "og:url", content: "https://tedxnielitaurangabad.com/pastspeakers" },
+                { property: "og:type", content: "website" }
+            ];
+        
+            ogTags.forEach(tag => {
+                let metaTag = document.createElement("meta");
+                metaTag.setAttribute("property", tag.property);
+                metaTag.content = tag.content;
+                document.head.appendChild(metaTag);
+            });
+        
+            // Set Twitter Meta Tags
+            let twitterTags = [
+                { name: "twitter:card", content: "summary_large_image" },
+                { name: "twitter:title", content: "Past TEDx Speakers | TEDx NIELIT Aurangabad Inspiring Talks" },
+                { name: "twitter:description", content: "Explore the inspiring TEDx NIELIT Aurangabad talks from past speakers. Discover groundbreaking ideas that spark change." },
+                { name: "twitter:image", content: "https://yourwebsite.com/images/past-speakers.jpg" },
+                { name: "twitter:url", content: "https://yourwebsite.com/past-speakers" }
+            ];
+        
+            twitterTags.forEach(tag => {
+                let metaTag = document.createElement("meta");
+                metaTag.name = tag.name;
+                metaTag.content = tag.content;
+                document.head.appendChild(metaTag);
+            });
+        
+            // Add Schema.org Structured Data for SEO (JSON-LD format)
+            let schemaScript = document.createElement("script");
+            schemaScript.type = "application/ld+json";
+            schemaScript.text = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": "TEDx NIELIT Aurangabad",
+                "description": "Join TEDx NIELIT Aurangabad and discover inspiring talks from past speakers. Explore groundbreaking ideas shaping the future.",
+                "startDate": "2025-05-04",
+                "location": {
+                    "@type": "Aurangabad Maharastra",
+                    "name": "NIELIT Aurangabad",
+                    "address": "NIELIT, Aurangabad,431004, India"
+                },
+                "image": ["https://tedxnielitaurangabad.com/tedx_speaker/yashraj%20mukhate.jpg"],
+                "url": "https://tedxnielitaurangabad.com/pastspeakers",
+                "organizer": {
+                    "@type": "Nielit Aurangabad",
+                    "name": "TEDx NIELIT Aurangabad",
+                    "url": "https://tedxnielitaurangabad.com"
+                }
+            });
+            document.head.appendChild(schemaScript);
+        });
+        </script>
+</body>
+</html>
