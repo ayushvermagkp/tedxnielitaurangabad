@@ -17,7 +17,7 @@ Tech Stack
 Getting Started
 To run the website locally, follow these steps:
 1. Clone the repository
- git clone https://github.com/your-username/tedxnielitaurangabad.com.git
+ git clone[ https://github.com/your-username/tedxnielitaurangabad.com.git](https://ayushvermagkp.github.io/tedxnielitaurangabad/)
  cd tedxnielitaurangabad.com
 2. Open the index.html file in any modern web browser.
  Alternatively, you may use a local development server for a smoother experience:
